@@ -240,6 +240,13 @@ do
   -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
   -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+  vim.keymap.set('n', '<leader>ts', function()
+    vim.cmd.vnew()
+    vim.cmd.term()
+    vim.cmd.wincmd 'J'
+    vim.api.nvim_win_set_height(0, 15)
+  end, { desc = '[T]erminal [S]mall'})
+
   -- [[ Basic Autocommands ]]
   --  See `:help lua-guide-autocommands`
 
